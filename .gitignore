@@ -6,3 +6,4 @@ gambit/config.yaml
 __pycache__/
 *.pyc
 .coverage
+env
