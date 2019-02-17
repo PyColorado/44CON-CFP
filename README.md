@@ -11,15 +11,17 @@ These are extremely rudimentary instructions to build the development environmen
 1. Get dependencies for Django: `pip install -r requirements/base.txt`
 2. Copy `gambit/config.example.yaml` to `gambit/config.yaml` and update it with your own secret key, anymail settings, postgresql details, and sentry DSN. If you've got your own mail setup, alternative database deployment, or use a different error tracking solution, you will need to make the relevant changes in settings/base.py or override them in settings/YOUR-OWN-SETTINGS-FILE.py
 3. Add the core database tables: `python manage.py migrate`
-4. Prepare the project-specific tables: `python manage.py makemigrations gambit`
-5. Commit to database: `python manage.py migrate`
-6. Collect CSS and JavaScript assets: `bower install --save --production misc/bower.json`
-7. *Optional* Modify the variables.less file to change the site colour scheme: `cp misc/variables.less bower_components/flat-ui/less`
-8. *Optional (dependent on 7)* Generate minified CSS and source map: `lessc --source-map-less-inline --source-map-map-inline --clean-css bower_components/flat-ui/less/flat-ui.less bower_components/flat-ui/dist/css/flat-ui-44con.min.css`
-9. Copy bower assets and project assets to static directory: `python manage.py collectstatic --clear`
-10. Compress JS/CSS assets: `python manage.py compress`
+4. Set the settings: `export DJANGO_SETTINGS_MODULE="gambit.settings.development"`
+5. Prepare the project-specific tables: `python manage.py makemigrations gambit`
+6. Commit to database: `python manage.py migrate`
+7. Move into the "build" directory: `cd build`
+8. Collect CSS and JavaScript assets: `bower install --save --production`
+9. *Optional* Modify the variables.less file to change the site colour scheme: `cp build/variables.less bower_components/flat-ui/less`
+10. *Optional (dependent on 7)* Generate minified CSS and source map: `lessc --source-map-less-inline --source-map-map-inline --clean-css bower_components/flat-ui/less/flat-ui.less bower_components/flat-ui/dist/css/flat-ui-44con.min.css`
+11. Copy bower assets and project assets to static directory: `python manage.py collectstatic --clear`
+12. Compress JS/CSS assets: `python manage.py compress`
 
-Steps 6 to 9 can be achieved with `bash prepare_assets.sh`.
+Steps 8 to 11 can be achieved with `bash prepare_assets.sh`.
 
 ## Usage
 Some database objects are currently critical for certain pages due to bad coding decisions. This will be rectified in future releases but for now, the singular FrontPage and SubmissionDeadline objects should be generated using the admin interface after creating a superuser account. When created, the admin UI will restrict from creating more objects under these models. Again, this is poor design choice and will be corrected in the future but, for the time being, avoid trying to create more of these objects. The logic of the application shouldn't really be affected if you do but shit happens and it likely will.
