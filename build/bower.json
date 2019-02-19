@@ -1,10 +1,5 @@
 {
-  "name": "44con-cfp",
-  "homepage": "https://github.com/nimxj/44CON-CFP",
-  "authors": [
-    "Aidan Mitchell <aidan@44con.com>"
-  ],
-  "description": "CSS and JS assets for 44CON-CFP",
+  "description": "CSS and JS assets for CFP",
   "main": "",
   "license": "MIT",
   "private": true,

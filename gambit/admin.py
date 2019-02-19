@@ -70,7 +70,7 @@ class SubmissionAdmin(admin.ModelAdmin):
     def _export_to_csv(self, request, queryset):
         """I apologise for this horrendous method."""
         response = HttpResponse(content_type="text/csv")
-        response["Content-Disposition"] = "attachment; filename=44CON-CFP-submissions.csv"
+        response["Content-Disposition"] = "attachment; filename=cfp-submissions.csv"
         writer = csv.writer(response)
         writer.writerow(['Title', 'Authors', 'Contact', 'Submitted On', 'Score', 'Submitter', 'Submitter Email', 'Country',])
         submissions = queryset.values_list('title', 'authors', 'contact_email', 'submitted_on',)
@@ -122,7 +122,7 @@ class SubmissionReviewAdmin(admin.ModelAdmin):
 
     def _export_to_csv(self, request, queryset):
         response = HttpResponse(content_type="text/csv")
-        response["Content-Disposition"] = "attachment; filename=44CON-CFP-review-comments.csv"
+        response["Content-Disposition"] = "attachment; filename=cfp-review-comments.csv"
         writer = csv.writer(response)
         writer.writerow(['Reviewer', 'Comments', 'Submission Title'])
         reviews = queryset.values_list('user__profile__name', 'comments', 'submission__title',)

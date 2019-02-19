@@ -2,6 +2,8 @@
 conference:
   name: 'Conference Name'
   year: 2018
+  contact_email: 'cfp@example.org'
+  url: 'cfp.example.org'
 
 core:
   debug: False

@@ -6,7 +6,7 @@ set -o pipefail
 readonly PROJECT_ROOT="$(pwd)"
 readonly BUILD_SRC="$PROJECT_ROOT/build"
 readonly LESS_SRC="$PROJECT_ROOT/bower_components/flat-ui/less/flat-ui.less"
-readonly CSS_DEST="$PROJECT_ROOT/bower_components/flat-ui/dist/css/flat-ui-44con.min.css"
+readonly CSS_DEST="$PROJECT_ROOT/bower_components/flat-ui/dist/css/flat-ui.min.css"
 export DJANGO_SETTINGS_MODULE="gambit.settings.production"
 
 prepare_db() {
