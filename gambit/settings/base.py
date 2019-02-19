@@ -198,8 +198,6 @@ STATICFILES_FINDERS = [
     "compressor.finders.CompressorFinder",
 ]
 
-DEFAULT_FROM_EMAIL = configuration['anymail']['from_email']
-
 if configuration["sentry"]["enabled"]:
     import raven
     INSTALLED_APPS.append("raven.contrib.django.raven_compat")

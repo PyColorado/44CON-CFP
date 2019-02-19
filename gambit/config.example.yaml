@@ -49,8 +49,8 @@ whitelist_content_types:
 
 anymail:
   from_email: 'cfp@example.org'
-  mailgun:
-    api_key: 'yourmailgunkey'
+  sendgrid:
+    api_key: 'yoursendgridkey'
     sender_domain: 'mg.example.com'
 
 database:
