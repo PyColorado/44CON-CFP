@@ -1,4 +1,4 @@
-# Contributing to 44CON-CFP
+# Contributing
 
 #### Contents
 

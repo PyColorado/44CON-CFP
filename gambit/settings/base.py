@@ -198,11 +198,6 @@ STATICFILES_FINDERS = [
     "compressor.finders.CompressorFinder",
 ]
 
-EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
-ANYMAIL = {
-    'MAILGUN_API_KEY': configuration["anymail"]["mailgun"]["api_key"],
-    'MAILGUN_SENDER_DOMAIN': configuration["anymail"]["mailgun"]["sender_domain"],
-}
 DEFAULT_FROM_EMAIL = configuration['anymail']['from_email']
 
 if configuration["sentry"]["enabled"]:
@@ -218,6 +213,8 @@ if configuration["sentry"]["enabled"]:
 # These require matching declarations in context_processors.py
 CONFERENCE_NAME = configuration["conference"]["name"]
 CONFERENCE_YEAR = configuration["conference"]["year"]
+CONFERENCE_EMAIL = configuration["conference"]["contact_email"]
+CONFERENCE_URL = configuration["conference"]["url"]
 
 # Whitelist of acceptable file types for submissions
 CONTENT_TYPES = [ct for ct in configuration["whitelist_content_types"]]

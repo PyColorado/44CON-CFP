@@ -16,4 +16,6 @@ def global_settings(request):
         'CONFERENCE_YEAR': settings.CONFERENCE_YEAR,
         'RELEASE_HASH': release_hash,
         'SUBMISSION_DEADLINE': deadline.date if deadline else None,
+        'CONFERENCE_EMAIL': settings.CONFERENCE_EMAIL,
+        'CONFERENCE_URL': settings.CONFERENCE_URL
     }
