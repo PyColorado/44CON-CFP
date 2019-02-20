@@ -1,0 +1,62 @@
+html{ position: relative; min-height: 100%; }
+body{ padding-bottom: 20px; }
+
+/* DataTable styles */
+.dt-buttons { margin: 1em; }
+
+.dataTables_length, .dataTables_filter {
+  display: inline;
+  margin: 1em;
+  float: right;
+}
+
+/* Submission List */
+.submissions-list-container { margin: 1.5em; }
+.submissions-table { padding: 0.75em; }
+.table-submission-list { width: 100% !important; }
+
+/* Form errors */
+ul.errorlist > li { color: #c9302c; }
+
+/* Maintain spacing for inline buttons when page width reduces */
+.group-button-spacing { margin: 1px; }
+
+.banner-alert { margin-bottom: 0; padding: 5px; }
+
+/* Borderless table */
+.table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > td,
+.table-borderless > tfoot > tr > th,
+.table-borderless > thead > tr > td,
+.table-borderless > thead > tr > th {
+    border: none;
+}
+
+.is_breakable { table-layout: fixed; word-wrap: break-word; }
+
+/* Submission View */
+#submission { margin-bottom: 3em; }
+#reviews { margin-bottom: 3em; }
+.submission-title { margin-top: 0.4em; }
+.submission-icon { margin-right: 0.35em; }
+.submission-subtitle { border-bottom: 1px #EEE solid; }
+.review-checkmark { margin-left: 0.35em; font-size: 0.8em; }
+
+/* Messages */
+.messages-icon { margin-right: 0.35em; }
+
+/* Mousover for file hash */
+#file-hash #abbreviated-hash { display: inline; }
+#file-hash:hover #abbreviated-hash { display: none; }
+#file-hash #full-hash { display: none; }
+#file-hash:hover #full-hash { display: inline; }
+
+.smaller { font-size: 65%; }
+
+/* Navbar auth buttons */
+p.auth-buttons { margin-bottom:0; }
+
+/* Front page */
+.front-page-login-box { margin: 0.35em; }
+.front-page-tabs { padding: 15px; }

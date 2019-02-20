@@ -1,10 +1,11 @@
 bower_components/
+node_modules/
 gambit/media/
 gambit/migrations/
 gambit/static/
-
 __pycache__/
 *.pyc
 .coverage
-env
+env/
 sent_emails/
+.env
